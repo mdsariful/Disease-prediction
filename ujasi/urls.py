@@ -1,3 +1,4 @@
+
 from django.urls import path, include
 from django.conf.urls import handler404
 from django.conf.urls import url, include
@@ -10,6 +11,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('bonge.urls')),
     url(r'^bonge/', include(note_resource.urls)),
+    
 ]
 
 
