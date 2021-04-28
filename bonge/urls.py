@@ -1,15 +1,13 @@
-from ujasi.settings import TEMPLATES
 from django.urls import path, include
 from . import views
-from django.contrib import admin
+from rest_framework import routers
 
-import bonge
+router=routers.DefaultRouter()
+router.register('bonge',views.NoteView)
+
 
 urlpatterns = [
- path('', views.home, name="home"),
- path('predict', views.predictdisease, name="predictdisease"),
- path('team', views.team, name="team"),
- path('predict', views.predict, name="predict"),
- path('about', views.about, name="about"),
- 
+    path('form/',views.myform,name='myform'),
+    path('api/',include(router.urls)),
+    path('status/',views.Notereject),
 ]
